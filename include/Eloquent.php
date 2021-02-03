@@ -13,6 +13,7 @@ class eloquent
 
         try {
             $dbh = new \PDO($dsn, $user, $password);
+            echo '<center><h1>Success Connection With DataBase......</h1></center>';
         } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
