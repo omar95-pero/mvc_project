@@ -13,7 +13,14 @@ class eloquent
         $dsn = 'mysql:dbname=' . $infoDatabase['dbname'] . ';host=127.0.0.1';
         $user = $infoDatabase['dbuser'];
         $password = $infoDatabase['dbpassword'];
-        if (!empty($infoDatabase['dbname']) && !empty($infoDatabase['dbuser'])) {
+        if (!empty($infoDatabase['dbname']) && !empty($infoDatabase['dbuser']) && !empty($infoDatabase['dbpassword'])) {
+            if ($infoDatabase['FETCH_TYPE' == 'ASSOC']) {
+                $fetech = \PDO::FETCH_ASSOC;
+            } elseif ($infoDatabase['FETCH_TYPE'] == 'object') {
+                $fetech = \PDO::FETCH_OBJ;
+            } else {
+                $fetech = \PDO::FETCH_OBJ;
+            }
             try {
                 $dbh = new \PDO($dsn, $user, $password);
                 echo '<center><h1>Success Connection With DataBase......</h1></center>';

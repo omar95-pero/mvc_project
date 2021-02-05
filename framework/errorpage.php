@@ -9,7 +9,7 @@
 
 <body>
     <center>
-        <div style="width:80%;background-color:#f1f1f1;color:#000;min-height:500px;border:1px solid #000;">
+        <div style="width:80%;background-color:red;color:#000;min-height:500px;border:1px solid #000;">
             <?php echo '<h1>' . $error . '</h1>'; ?>
         </div>
     </center>
