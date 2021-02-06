@@ -1,12 +1,17 @@
 <?php
 
-namespace Errors;
+namespace framework;
 
 class Error
 {
-    public function __construct($dataException)
+    public function __construct($dataException = null)
     {
-        $error = $dataException;
+        if (!empty($dataException)) {
+            self::view($dataException);
+        }
+    }
+    public static function view($error)
+    {
         include 'framework/errorpage.php';
     }
 }
